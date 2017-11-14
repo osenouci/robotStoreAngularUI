@@ -10,7 +10,7 @@ import { PageNotFoundComponent  } from './components/page-not-found/page-not-fou
 const appRoutes: Routes = [
 
   {
-    path: 'public',
+    path: '',
     loadChildren: './modules/public/public.module#PublicModule',
     data: { preload: true }
   }, 
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     loadChildren: './modules/profile/profile.module#ProfileModule',
     data: { preload: true }
   },*/       
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 ];
 

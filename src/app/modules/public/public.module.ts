@@ -1,11 +1,22 @@
-import { NgModule } from '@angular/core';
+// Import core modules
+import { NgModule     } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+
+// Import components
+import { HomePageComponent        } from './components/home-page/home-page.component';
+import { ProductDetailsComponent  } from './components/product-details/product-details.component';
+
+// Import UI modules
+import { SharedModule } from './../shared/shared.module';
+
+// Import the routes
+import { PublicModuleRoutes } from './public.routes';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PublicModuleRoutes,
+    SharedModule
   ],
   declarations: [HomePageComponent, ProductDetailsComponent]
 })
