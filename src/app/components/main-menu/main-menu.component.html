@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <mat-toolbar-row>
+      <i class="material-icons pointer margin-right-1" id="navigation-buttom" [style.hidden]="sideNavAvailable" (click)="openSideNav()">menu</i>
+      <span (click)="navigateHome()" class="pointer">RobotStore</span>
+
+      <span style="flex: 1 1 auto;">&nbsp;</span>
+      <!-- login button -->
+      <span (click)="login()" class="pointer" [class.hidden]="isLoggedIn()">Login</span>
+      <span (click)="logout()" class="pointer" [class.hidden]="!isLoggedIn()">Logout</span>
+    </mat-toolbar-row>
+  </div>
+</div>
