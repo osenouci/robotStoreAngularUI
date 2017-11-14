@@ -13,11 +13,15 @@ import { AppRoutingModule } from './app.module.routes';
 // Import components
 import { AppComponent          } from './components/app.component/app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MainMenuComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

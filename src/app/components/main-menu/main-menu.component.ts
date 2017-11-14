@@ -13,7 +13,7 @@ export class MainMenuComponent {
 
 
   public navigateHome(){
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 
   public isLoggedIn() {

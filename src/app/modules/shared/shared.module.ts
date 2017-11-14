@@ -20,7 +20,8 @@ import {
   MatTooltipModule,
   MatStepperModule,
   MatMenuModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatGridListModule
 
 } from '@angular/material';
 
@@ -47,7 +48,8 @@ import {
     MatTooltipModule,
     MatStepperModule,
     MatMenuModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatGridListModule
 
   ],
   declarations: [],
@@ -74,7 +76,8 @@ import {
         MatTooltipModule,
         MatStepperModule,
         MatMenuModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatGridListModule
       ]  
 })
 export class SharedModule { }

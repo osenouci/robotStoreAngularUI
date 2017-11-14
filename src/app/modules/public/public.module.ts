@@ -11,6 +11,8 @@ import { SharedModule } from './../shared/shared.module';
 
 // Import the routes
 import { PublicModuleRoutes } from './public.routes';
+import { CategoryComponent } from './components/home-page/subcomponents/category/category.component';
+import { ListComponent } from './components/home-page/subcomponents/list/list.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { PublicModuleRoutes } from './public.routes';
     PublicModuleRoutes,
     SharedModule
   ],
-  declarations: [HomePageComponent, ProductDetailsComponent]
+  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ListComponent]
 })
 export class PublicModule { }

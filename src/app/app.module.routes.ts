@@ -14,6 +14,11 @@ const appRoutes: Routes = [
     loadChildren: './modules/public/public.module#PublicModule',
     data: { preload: true }
   }, 
+  {
+    path: 'auth',
+    loadChildren: './modules/auth/auth.module#AuthModule',
+    data: { preload: true }
+  },   
   /*    
   {
     path: 'profile',
