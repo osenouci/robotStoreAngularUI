@@ -52,15 +52,6 @@ html {
 
 #loading-screen {
     background-color: #3f51b5;
-    #background-ground-image {
-        text-align: center;
-    }
-    #background-ground-image svg {
-        margin: 0 auto;
-        width: 35%;
-        height: auto;
-        fill: rgb(255, 255, 255);
-    }
     #main-loader {
         margin-top:20em;
     }
@@ -71,10 +62,6 @@ html {
         margin-top:2em;
     }
     @media screen and (max-width: 1024px) {
-        #background-ground-image svg {
-            width: auto;
-            height: 60%;
-        }
         h1 {
             color: white;
             font-size: 85%;
@@ -177,4 +164,24 @@ html {
             opacity: 0;
         }
     }
+}
+
+
+/** Styling the categories **/
+.section-content {
+    .category-entry {
+        padding:0.4em;    
+    }
+    .category-entry:hover {
+        background-color:#3f51b5;
+        cursor:pointer;
+    }
+    .category-entry:hover a {
+        color:white;
+    }
+    .category-entry a {
+        color:black;
+        font-size:1.2em;
+        text-decoration: none;  
+    }    
 }

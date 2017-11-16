@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 
-let loadingTime = 2000;
+let loadingTime = 0;//2000;
 if (environment.production) {
   enableProdMode();
   loadingTime = 0;

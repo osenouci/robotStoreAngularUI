@@ -1,3 +1,4 @@
-<p>
-  category works!
-</p>
+<div class="category-entry" *ngFor="let category of categories; index as i; trackBy: id">
+    <a href="#" onclick="return false" >{{ category.name }}</a>
+</div>
+ 

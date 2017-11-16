@@ -1,0 +1,16 @@
+div.main-menu {
+    i.material-icons {
+        font-size: 2em;
+    }
+    span {
+        font-size: 1.6em;
+    }
+    @media screen and (max-width: 768px) {
+        i.material-icons {
+            font-size: 1.4em;
+        }
+        span {
+            font-size: 1.2em;
+        }
+    }
+}

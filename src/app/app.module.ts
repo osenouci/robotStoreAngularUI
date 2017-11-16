@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 
+import { RequestService } from './services/request.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
     HttpClientModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    RequestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

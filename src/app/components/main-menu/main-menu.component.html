@@ -1,13 +1,12 @@
-<div class="container">
-  <div class="row">
+<div class="grid-container main-menu">
     <mat-toolbar-row>
-      <i class="material-icons pointer margin-right-1" id="navigation-buttom" [style.hidden]="sideNavAvailable" (click)="openSideNav()">menu</i>
-      <span (click)="navigateHome()" class="pointer">RobotStore</span>
+      <i class="material-icons pointer margin-right-1 hide-on-desktop hide-on-tablet" id="navigation-buttom" [style.hidden]="sideNavAvailable" (click)="openSideNav()">menu</i>
+      <span (click)="navigateHome()" class="pointer styled-header">RobotStore</span>
 
       <span style="flex: 1 1 auto;">&nbsp;</span>
-      <!-- login button -->
-      <span (click)="login()" class="pointer" [class.hidden]="isLoggedIn()">Login</span>
-      <span (click)="logout()" class="pointer" [class.hidden]="!isLoggedIn()">Logout</span>
+
+      <!-- login and logout buttons -->
+      <i (click)="login()"  class="material-icons pointer" title="Login"  [class.hidden]="isLoggedIn()">account_circle</i>
+      <i (click)="logout()" class="material-icons pointer" title="Logout" [class.hidden]="!isLoggedIn()">lock</i>
     </mat-toolbar-row>
-  </div>
 </div>
