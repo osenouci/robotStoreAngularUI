@@ -11,7 +11,7 @@ import { Category } from './../../../../classes/category';
 })
 export class CategoryComponent implements OnInit {
 
-  protected categories: Array<Category> = new Array();
+  public categories: Array<Category> = new Array();
 
   constructor(protected requestService: RequestService) { }
 
