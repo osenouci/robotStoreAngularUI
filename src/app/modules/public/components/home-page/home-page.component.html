@@ -1,34 +1,49 @@
 <div class="container">
+    <div class="banner">
+        </div>
 
-<div class="banner">
-  
-</div>
+  <div class="row">
+      <div class="col-4">
 
-<mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="section section-left">
+              <div class="section-header">
+                Our robot types
+              </div>
+              <div class="section-content">
+                <app-category></app-category>
+              </div>
+            </div>
 
-    <div class="section section-left">
-      <div class="section-header">
-        Our robot types
       </div>
-      <div class="section-content">
-        <app-category></app-category>
+      <div class="col-8">
+
+          <div class="section section-right">
+              <div class="section-header">
+                Our robots
+              </div>
+              <div class="section-content">
+                <app-list></app-list>
+              </div>
+            </div>        
+
+
       </div>
     </div>
+  </div>
+
+<!--
+
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" class="padding-bottom-1">
+
+
 
   </mat-grid-tile>
   <mat-grid-tile [colspan]="3" [rowspan]="1">
 
-    <div class="section section-right">
-      <div class="section-header">
-        Our robots
-      </div>
-      <div class="section-content">
-        <app-list></app-list>
-      </div>
-    </div>
+
 
   </mat-grid-tile>
 </mat-grid-list>
 </div>
-
+-->

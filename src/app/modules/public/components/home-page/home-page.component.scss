@@ -1,19 +1,25 @@
 .section {
 
     width:100%;
-
+    .section-header,
+    .section-content {
+        
+    }
     .section-header {
         background-color:red;
         color:white;
         padding:0.4em;
+        
     }
-    .section-content {}
+    .section-content {
+      background: white;
+      border:solid 1px rgb(75, 75, 75);
+    }
 }
 .mat-figure {
     position: relative;
 }
 .section-left {
-    width:95%;
     position: relative;
     left:-0.4em;
 }
@@ -21,4 +27,7 @@
     margin: 2em 0;
     min-height: 240px;
     background: rgb(112, 112, 112);
+}
+.row [class^=col] {
+    margin:0 !important;
 }
