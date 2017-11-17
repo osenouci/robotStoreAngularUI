@@ -3,6 +3,8 @@ import { RequestService } from './../../../../services/request.service';
 import { Robot } from './../../classes/robot';
 import { Router } from '@angular/router';
 
+import { CredentialsStorage } from './../../../auth/classes/credentials.store';
+
 
 @Component({
   selector: 'app-home-page',
@@ -14,6 +16,8 @@ export class HomePageComponent implements OnInit {
 
   public robots:Array<Robot> = new Array();
   public categoryId:number = 0;
+
+  public credentialsStorage:CredentialsStorage = new CredentialsStorage();
 
   constructor(protected requestService: RequestService, private router:Router) { }
 
@@ -48,4 +52,7 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['add']);
   }
 
+  public isLoggedIn():boolean {
+    return this.credentialsStorage.isCredentilsSet();
+  }
 }

@@ -1,7 +1,7 @@
 <!--<div class="banner">
 </div>
 -->
-<div class="add-section">
+<div class="add-section" [class.hidden]="!isLoggedIn()">
   <button mat-raised-button color="accent" (click)="navigateToAddRobotForm()">Add new robot</button>
 </div>
 <!-- Product listing and categories -->
