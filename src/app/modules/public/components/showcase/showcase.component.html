@@ -1,0 +1,22 @@
+<div class="grid-container grid-parent">
+
+  <div *ngFor="let robot of robots | paginate: { itemsPerPage: robotsPerPage, currentPage: page }" class="product-showcase grid-25">
+    <div class="showcase-border">
+      <div class="showcase-image">
+        <img src="{{ robot.photo }}" />
+      </div>
+      <div class="showcase-info">
+        <span class="title ellipsis">{{ robot.name }}</span>
+        <span class="description ellipsis">{{ robot.description }} hello this is. This is a simple product diresctoldsadsadsadsadsadffg</span>
+        <span class="price ellipsis">EUR {{ robot.price }}</span>
+      </div>
+      <div class="showcase-controls">
+        <button mat-raised-button color="primary" (click)="showRobotDetails(robot.id)">Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-align-center">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

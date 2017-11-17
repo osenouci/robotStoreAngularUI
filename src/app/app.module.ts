@@ -14,7 +14,6 @@ import { AppRoutingModule } from './app.module.routes';
 import { AppComponent          } from './components/app.component/app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { CategoriesComponent } from './components/categories/categories.component';
 
 import { RequestService } from './services/request.service';
 
@@ -22,8 +21,7 @@ import { RequestService } from './services/request.service';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    MainMenuComponent,
-    CategoriesComponent
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,6 @@
 export class Category {
 
-    protected _name:string;
-    protected _id:number;
-
-    constructor(name:string, id:number) {
-        this._name = name;
-        this._id = id;
+    constructor(protected _id:number, protected _name:string, protected _total:number) {
     }
 
     public get name():string {
@@ -14,4 +9,7 @@ export class Category {
     public get id():number {
         return this._id;
     }     
+    public get total():number {
+        return this._total;
+    }         
 }

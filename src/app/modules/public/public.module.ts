@@ -8,18 +8,20 @@ import { ProductDetailsComponent  } from './components/product-details/product-d
 
 // Import UI modules
 import { SharedModule } from './../shared/shared.module';
+import {NgxPaginationModule} from 'ngx-pagination'; // pagination module
 
 // Import the routes
 import { PublicModuleRoutes } from './public.routes';
-import { CategoryComponent } from './components/home-page/subcomponents/category/category.component';
-import { ListComponent } from './components/home-page/subcomponents/list/list.component';
+import { CategoryComponent } from './components/category/category.component';
+import { ShowcaseComponent } from './components/showcase/showcase.component';
 
 @NgModule({
   imports: [
     CommonModule,
     PublicModuleRoutes,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ],
-  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ListComponent]
+  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent]
 })
 export class PublicModule { }
