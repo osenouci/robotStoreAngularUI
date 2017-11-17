@@ -29,9 +29,6 @@ export class CategoryComponent implements OnInit {
         for(let entry of response.body.data) {
           this.categories.push(new Category(entry.id, entry.name, entry.total));
         }
-
-        console.log(this.categories);
-
       }
 
     } catch (err) {
