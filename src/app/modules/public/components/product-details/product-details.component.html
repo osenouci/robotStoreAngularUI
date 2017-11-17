@@ -1,3 +1,7 @@
+<div [class.hidden]="!isLoggedin()" class="delete-section">
+    <button mat-raised-button color="warn" (click)="delete()">Delete robot</button>
+</div>
+
 <app-gallery [photos]="galleryImages">
 </app-gallery>
 

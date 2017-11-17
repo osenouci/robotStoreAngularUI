@@ -16,6 +16,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { AddComponent } from './components/add/add.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,6 @@ import { CategoryFilterPipe } from './pipes/category-filter.pipe';
     SharedModule,
     NgxPaginationModule
   ],
-  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent, GalleryComponent, CategoryFilterPipe]
+  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent, GalleryComponent, CategoryFilterPipe, AddComponent]
 })
 export class PublicModule { }

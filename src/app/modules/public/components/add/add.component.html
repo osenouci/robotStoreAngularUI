@@ -1,0 +1,94 @@
+<div class="full-screen-container aligner">
+
+  <div class="add-form">
+
+    <h1 class="styled-header">Add new robot</h1>
+    <div class="loader-container" [class.hidden]="!isLoading">
+      <app-simple-loader></app-simple-loader>
+    </div>
+
+    <div class="form-container" [class.hidden]="isLoading">
+
+      <form addForm="ngForm" [class.hidden]="isLoading">
+
+        <!-- Robot name -->
+        <div class="input">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Robot's name" [(ngModel)]="name" type="text" [formControl]="nameFormControl" />
+            <mat-error *ngIf="nameFormControl.hasError('minlength')">
+              The Robot's name should be at least 8 characters long.
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('maxlength')">
+              The Robot's name should be at most 80 characters long.
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Mandatory field
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Robot description -->
+        <div class="input">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Robot's description" [(ngModel)]="description" type="text" [formControl]="descriptionFormControl"></textarea>
+            <mat-error *ngIf="descriptionFormControl.hasError('minlength')">
+              The Robot's description should be at least 8 characters long.
+            </mat-error>
+            <mat-error *ngIf="descriptionFormControl.hasError('maxlength')">
+              The Robot's description should be at most 2500 characters long.
+            </mat-error>
+            <mat-error *ngIf="descriptionFormControl.hasError('required')">
+              Mandatory field
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Robot Price -->
+        <div class="input">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Price in euros" [(ngModel)]="price" type="number" [formControl]="priceFormControl" />
+            <mat-error *ngIf="priceFormControl.hasError('min')">
+              The price should be at least 1 euro.
+            </mat-error>
+            <mat-error *ngIf="priceFormControl.hasError('max')">
+              The price should be at most 100 000 euros.
+            </mat-error>
+            <mat-error *ngIf="priceFormControl.hasError('required')">
+              Mandatory field
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Category selection -->
+        <div class="input">
+          <mat-form-field>
+            <mat-select placeholder="Robot category" [formControl]="categoryFormControl" [(ngModel)]="category">
+              <mat-option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="categoryFormControl.hasError('required')" l10nTranslate>
+              Mandatory field
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Add new photo -->
+        <div class="input photo-input">
+            <button mat-fab color="accent" title="Add new photo" (click)="addNewPhoto()">
+                <mat-icon aria-label="Add a new photo">add_a_photo</mat-icon>
+            </button>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" (click)="submit()"  [disabled]="!addForm.valid">Add new robot</button>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="photo-container">
+      <img *ngFor="let photo of photos" src="{{photo.url}}" />
+    </div>
+
+  </div>
+</div>

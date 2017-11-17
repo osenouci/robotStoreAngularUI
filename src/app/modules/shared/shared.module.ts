@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { SimpleLoaderComponent } from './components/simple-loader/simple-loader.component';
+
 // Import angular material components
 import {
   
@@ -52,9 +54,11 @@ import {
     MatGridListModule
 
   ],
-  declarations: [],
+  declarations: [SimpleLoaderComponent],
   exports: [
     
+        SimpleLoaderComponent,
+
         // Export modules
         CommonModule,
         RouterModule,

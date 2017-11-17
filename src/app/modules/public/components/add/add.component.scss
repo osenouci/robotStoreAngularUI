@@ -1,0 +1,36 @@
+.add-form {
+
+    padding: 2em 1em;
+    background: #FFF;
+    width:50%;
+    margin: 3em auto 0;
+
+    .loader-container {
+        width:50%;
+        margin:0 auto;
+    }
+
+    input, select, textarea {
+        width:100%;
+    }
+    .mat-form-field-infix, mat-form-field {
+        width:100%;
+    }
+
+    textarea {
+        min-height: 10em;
+    }
+    .photo-input {
+        text-align: right;
+    }
+
+    .photo-container {
+
+        margin-top:2em;
+        img {
+            width:5em;
+            height:5em;
+            clip: rect(0px,5em,5em,0px);
+        }
+    }
+}

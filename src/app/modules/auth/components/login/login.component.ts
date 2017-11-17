@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterStateSnapshot, NavigationEnd } from '@angular/router';
 import {FormControl, Validators, FormGroup} from '@angular/forms';
 import { RequestService } from './../../../../services/request.service';
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   private credentialsStorage:CredentialsStorage = new CredentialsStorage();
 
   // Define form models fields
-  public username:string;    // Login password
+  public username:string; // Login password
   public password:string; // Login password
 
   // Define form elements
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private requestService:RequestService, private router:Router) {
 
-    this.usernameFormControl    = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]);
+    this.usernameFormControl = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]);
     this.passwordFromControl = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]);
 
     this.loginForm = new FormGroup({ username: this.usernameFormControl, password: this.passwordFromControl });
@@ -58,7 +58,9 @@ export class LoginComponent implements OnInit {
         throw -1;
       }
 
-      // Save the credentials for later user
+      // Redirect the user to the page where he is coming from
+  //    const redirectURL = this.credentialsStorage.redirectURL? this.credentialsStorage.redirectURL : "";
+//      this.credentialsStorage.clearRedirectURL();   // Only use once 
       this.router.navigate([""]);
 
     } catch(err) {

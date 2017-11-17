@@ -9,6 +9,16 @@ export class CredentialsStorage {
     public isCredentilsSet():boolean {
         return !!this.password && !!this.username;
     }
+
+    public get redirectURL():string {
+        return localStorage.getItem("redirect_url") ? localStorage.getItem("redirect_url").trim() : null;  
+    }
+    public clearRedirectURL(){
+        localStorage.removeItem("redirect_url");        
+    }
+    public set redirectURL(value:string) {
+        localStorage.setItem("redirect_url", value);
+    }    
     public save(username:string, password:string) {
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);

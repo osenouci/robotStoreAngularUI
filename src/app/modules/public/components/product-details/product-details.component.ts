@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RequestService } from './../../../../services/request.service';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { CredentialsStorage } from './../../../auth/classes/credentials.store';
 
 @Component({
   selector: 'app-product-details',
@@ -8,23 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-details.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent {
 
   public galleryImages: Array<string> = new Array();
 
   public description:string;
   public name:string;
   public price:number;
+  private id:number;
+
+  private credentialsStorage:CredentialsStorage = new CredentialsStorage();
 
   constructor(protected requestService: RequestService, private activatedRoute: ActivatedRoute, private router:Router) {
 
     this.activatedRoute.params.subscribe(params => {
       this.loadRobot(params.robotId);
     });
+  }
 
 
-
-
+  public isLoggedin():boolean {
+    return this.credentialsStorage.isCredentilsSet();
   }
 
   async loadRobot(robotId) {
@@ -41,6 +47,7 @@ export class ProductDetailsComponent implements OnInit {
       this.name        = response.body.data.name;
       this.description = response.body.data.description;
       this.price       = response.body.data.price;
+      this.id          = response.body.data.id;
 
       for(let photo of response.body.data.photos) {
         this.galleryImages.push(photo.url);
@@ -52,10 +59,19 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  public async delete() {
 
+    try {
+
+      let answer = confirm(`Are you sure that you want to delete the robot ${this.id}?`);
+      if (answer) {
+        let response = await this.requestService.delete("/robot/" + this.id).toPromise(); // Delete the robot
+        this.router.navigate([""]); // Go to the home page.
+      } 
+
+    } catch(err){
+      alert("Oopes something went wrong while trying to delete the robot. Please try again.");
+    }
   }
-
-
 
 }

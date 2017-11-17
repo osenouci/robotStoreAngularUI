@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RequestService } from './../../../../services/request.service';
 import { Robot } from './../../classes/robot';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-page',
@@ -13,7 +15,7 @@ export class HomePageComponent implements OnInit {
   public robots:Array<Robot> = new Array();
   public categoryId:number = 0;
 
-  constructor(protected requestService: RequestService) { }
+  constructor(protected requestService: RequestService, private router:Router) { }
 
   ngOnInit() {
     this.loadRobots();
@@ -40,6 +42,10 @@ export class HomePageComponent implements OnInit {
 
   public onCategoryUpdate(categoryId) {
     this.categoryId = categoryId;
+  }
+
+  public navigateToAddRobotForm(){
+    this.router.navigate(['add']);
   }
 
 }
