@@ -5,11 +5,16 @@
 
 /** Material framewok modifications **/
 
+/** Fox for the gallary **/
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+    transform: none !important;
+}
+
 .mat-drawer-container {
     background: none !important; // This class adds a gray background color which I don't want to have
 }
 
-app-main-menu {
+app-main-menu { 
     width: 100%;
     span,
     mat-icon,

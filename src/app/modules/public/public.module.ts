@@ -10,10 +10,11 @@ import { ProductDetailsComponent  } from './components/product-details/product-d
 import { SharedModule } from './../shared/shared.module';
 import {NgxPaginationModule} from 'ngx-pagination'; // pagination module
 
-// Import the routes
+// Import the routes 
 import { PublicModuleRoutes } from './public.routes';
 import { CategoryComponent } from './components/category/category.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { ShowcaseComponent } from './components/showcase/showcase.component';
     SharedModule,
     NgxPaginationModule
   ],
-  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent]
+  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent, GalleryComponent]
 })
 export class PublicModule { }
