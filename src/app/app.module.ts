@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 
 import { RequestService } from './services/request.service';
+import { AuthInterceptor } from './modules/auth/classes/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RequestService } from './services/request.service';
     SharedModule
   ],
   providers: [
-    RequestService
+    RequestService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

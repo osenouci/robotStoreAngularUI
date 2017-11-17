@@ -4,35 +4,110 @@
     <div class="header">
       <img src="./../../../../../assets/icons/man.svg" alt="Kiwi standing on oval">
     </div>
-    <form>
-      <div class="input">
-        <form>
-          <mat-form-field class="full-width">
-              <input matInput placeholder="Email" type="email">
-          </mat-form-field>
-        </form>
-      </div>
+
+
+    <div class="text-align-center" [class.hidden]="!isLoading">
+      <svg class="lds-spinner" width="30%" height="30%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g transform="rotate(0 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(30 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(60 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(90 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(120 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(150 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(180 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(210 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(240 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(270 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(300 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+        <g transform="rotate(330 50 50)">
+          <rect x="47" y="22" rx="9.4" ry="4.4" width="6" height="16" fill="#28292f">
+            <animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+          </rect>
+        </g>
+      </svg>
+      <h1 class="styled-header">Please wait...</h1>
+    </div>
+
+    <form loginForm="ngForm" [class.hidden]="isLoading">
       <div class="input">
         <mat-form-field class="full-width">
-          <input matInput placeholder="Password" type="password">
-          <!--
-                 [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-              <mat-hint>Errors appear instantly!</mat-hint>
-              
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is
-                <strong>required</strong>
-              </mat-error>
-            -->
+          <input matInput placeholder="Your username" [(ngModel)]="username" type="text" [formControl]="usernameFormControl" />
+          <mat-error *ngIf="usernameFormControl.hasError('minlength')">
+            Username should be between 5 and 30 characters long.
+          </mat-error>
+          <mat-error *ngIf="usernameFormControl.hasError('maxlength')">
+            Username should be between 5 and 30 characters long.
+          </mat-error>
+          <mat-error *ngIf="usernameFormControl.hasError('required')">
+            Username is required
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
-          <button mat-raised-button color="primary">Login</button>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Your password" type="password" [(ngModel)]="password" [formControl]="passwordFromControl" />
+          <mat-error *ngIf="passwordFromControl.hasError('minlength')">
+            Password should be between 5 and 30 characters long.
+          </mat-error>
+          <mat-error *ngIf="passwordFromControl.hasError('maxlength')">
+            Password should be between 5 and 30 characters long.
+          </mat-error>
+          <mat-error *ngIf="passwordFromControl.hasError('required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
       </div>
     </form>
+
+    <span class="error" [class.hidden]="!errorMessage">{{ errorMessage }}</span>
   </div>
 
 </div>
