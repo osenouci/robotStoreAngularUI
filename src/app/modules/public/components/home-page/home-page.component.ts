@@ -11,13 +11,13 @@ import { Robot } from './../../classes/robot';
 export class HomePageComponent implements OnInit {
 
   public robots:Array<Robot> = new Array();
+  public categoryId:number = 0;
 
   constructor(protected requestService: RequestService) { }
 
   ngOnInit() {
     this.loadRobots();
   }
-
 
   async loadRobots() {
     
@@ -28,10 +28,8 @@ export class HomePageComponent implements OnInit {
       if (response.body.status == true && response.body.data) {
 
          for (let entry of response.body.data) {
-           this.robots.push(new Robot(entry.id, entry.name, entry.description, entry.price, entry.photo));
+           this.robots.push(new Robot(entry.id, entry.name, entry.description, entry.price, entry.photo, entry.categoryId));
          }
-
-         console.log("Robotos loaded: ", this.robots)
       }
 
     } catch (err) {
@@ -39,5 +37,9 @@ export class HomePageComponent implements OnInit {
     }
 
   }  
+
+  public onCategoryUpdate(categoryId) {
+    this.categoryId = categoryId;
+  }
 
 }

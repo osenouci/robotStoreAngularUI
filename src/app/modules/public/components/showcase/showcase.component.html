@@ -1,6 +1,6 @@
 <div class="grid-container grid-parent">
 
-  <div *ngFor="let robot of robots | paginate: { itemsPerPage: robotsPerPage, currentPage: page }" class="product-showcase grid-25">
+  <div *ngFor="let robot of robots | categoryFilter:categoryId | paginate: { itemsPerPage: robotsPerPage, currentPage: page }" class="product-showcase grid-25">
     <div class="showcase-border">
       <div class="showcase-image">
         <img src="{{ robot.photo }}" />

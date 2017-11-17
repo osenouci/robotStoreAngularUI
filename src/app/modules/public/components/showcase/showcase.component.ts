@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class ShowcaseComponent implements OnInit {
 
   @Input() robots:Array<Robot>;
+  @Input() categoryId:number = 0;
+
   public page: number = 1;
   public robotsPerPage:number = 8;
   constructor(protected router:Router) { }

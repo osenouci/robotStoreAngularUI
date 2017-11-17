@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { RequestService } from './../../../../services/request.service';
 
 import { Category } from './../../classes/category';
@@ -12,6 +12,10 @@ import { Category } from './../../classes/category';
 export class CategoryComponent implements OnInit {
 
   public categories: Array<Category> = new Array();
+  private selectedCategory:number;
+  
+  @Output() categoryIdEmittor: EventEmitter<number> = new EventEmitter();
+
   constructor(protected requestService: RequestService) { }
 
   ngOnInit() {
@@ -34,6 +38,14 @@ export class CategoryComponent implements OnInit {
     } catch (err) {
       console.log(err);
     }
-
   }
+
+  public selectCategory(categoryId:number) {
+    this.selectedCategory = categoryId;
+    this.categoryIdEmittor.emit(categoryId);
+  }
+  public isActive(categoryId:number):boolean {
+    return this.selectedCategory == categoryId;
+  }
+  
 }

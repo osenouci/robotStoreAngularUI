@@ -1,7 +1,12 @@
 export class Robot {
 
-    constructor(protected _id:number, protected _name:string, protected _description:string, protected _price:number, protected _photo:string) { }
+    constructor(protected _id:number, protected _name:string, protected _description:string, protected _price:number, 
+        protected _photo:string, protected _categoryId:number) { }
     
+
+    public get categoryId():number {
+        return this._categoryId;
+    }
     public get id():number {
         return this._id;
     }

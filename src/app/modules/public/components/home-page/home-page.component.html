@@ -1,6 +1,6 @@
-<div class="banner">
+<!--<div class="banner">
 </div>
-
+-->
 <!-- Product listing and categories -->
 <div class="container">
   <!-- Categories -->
@@ -9,7 +9,7 @@
       Categories
     </div>
     <div class="section-content">
-      <app-category></app-category>
+      <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
         Our robots
       </div>
       <div class="section-content">
-        <showcase-list [robots]="robots"></showcase-list>
+        <showcase-list [robots]="robots" [categoryId]="categoryId"></showcase-list>
       </div>
     </div>
 

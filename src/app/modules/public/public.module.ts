@@ -15,6 +15,7 @@ import { PublicModuleRoutes } from './public.routes';
 import { CategoryComponent } from './components/category/category.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     SharedModule,
     NgxPaginationModule
   ],
-  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent, GalleryComponent]
+  declarations: [HomePageComponent, ProductDetailsComponent, CategoryComponent, ShowcaseComponent, GalleryComponent, CategoryFilterPipe]
 })
 export class PublicModule { }

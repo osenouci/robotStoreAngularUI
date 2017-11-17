@@ -202,23 +202,3 @@ html {
     }
 }
 
-
-/** Styling the categories **/
-
-.section-content {
-    .category-entry {
-        padding: 0.4em;
-    }
-    .category-entry:hover {
-        background-color: #3f51b5;
-        cursor: pointer;
-    }
-    .category-entry:hover a {
-        color: white;
-    }
-    .category-entry a {
-        color: black;
-        font-size: 1.2em;
-        text-decoration: none;
-    }
-}
