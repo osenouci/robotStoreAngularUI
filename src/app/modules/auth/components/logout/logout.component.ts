@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router'
+
+import { CredentialsStorage } from './../../classes/credentials.store';
 
 @Component({
   selector: 'app-logout',
@@ -8,9 +11,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+    (new CredentialsStorage()).clear();
+    this.router.navigate(['']);
   }
 
 }

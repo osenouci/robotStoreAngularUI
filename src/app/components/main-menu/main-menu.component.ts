@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { CredentialsStorage } from './../../modules/auth/classes/credentials.store';
+
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
@@ -10,16 +12,16 @@ import { Router } from '@angular/router';
 export class MainMenuComponent {
 
   public sideNavAvailable:boolean = false;
+  private credentialsStorage:CredentialsStorage = new CredentialsStorage();
 
   constructor(protected router:Router) { }
-
 
   public navigateHome(){
     this.router.navigate(['/home']);
   }
 
   public isLoggedIn() {
-    return false;
+    return this.credentialsStorage.isCredentilsSet();
   }
   public login(){
     this.router.navigate(['auth/login']);
