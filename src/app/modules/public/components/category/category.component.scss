@@ -1,27 +1,54 @@
+@import './../../../../../assets/css/colors';
 
 /** Styling the categories **/
 
-.section-content {
-    .category-entry {
-        padding: 0.4em;
+.category-section {
+    background: $colorWhite;
+    .category-entry a,
+    .section-header {
+        padding: 1.5em 1em 1.2em 2em;
     }
-    .active,
+    .section-header {
+        font-weight: 700;
+        font-size: 1em;
+        color: $colorWhite;
+        background: $templateColor;
+    }
+    .category-entry a {
+        text-decoration: none;
+        color: #2f2f2f;
+        display: block;
+        border-bottom: solid 1px rgb(238, 236, 236);
+    }
+    .section-content div:nth-last-child(2) a {
+        border: 0;
+    }    
+    .category-entry a {
+        font: 300 14px/20px sans-serif;
+    }
     .category-entry:hover {
-        background-color: #3f51b5;
         cursor: pointer;
     }
     .active a,
     .category-entry:hover a {
-        color: white!important;
+        color: $templateColor!important;
     }
-    .category-entry a {
-        color: black;
-        font-size: 1.2em;
-        text-decoration: none;
-    }
-}
 
-.clear-filters-link a {
-    color:rgb(19, 35, 185);
-    margin-left:0.3em;
+    /** Position the clear button in the right bottom corner**/
+    .section-content {
+        position: relative;
+        overflow: auto;
+    }
+    .clear-filters-link {
+        text-align: right;
+        position: absolute;
+        right:0;
+        bottom:1em;
+    }
+    .clear-filters-link a {
+        color: $templateColor;
+        margin-right: 2em;
+        text-decoration: none;
+        font-size: 0.8em;
+    }    
 }

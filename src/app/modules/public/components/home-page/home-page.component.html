@@ -1,28 +1,35 @@
-<!--<div class="banner">
-</div>
--->
 <div class="add-section" [class.hidden]="!isLoggedIn()">
   <button mat-raised-button color="accent" (click)="navigateToAddRobotForm()">Add new robot</button>
 </div>
-<!-- Product listing and categories -->
-<div class="container">
+
+<div class="grid-parent grid-container default-margin-top">
+
   <!-- Categories -->
-  <div class="section section-left">
-    <div class="section-header styled-header">
-      Categories
-    </div>
-    <div class="section-content">
+  <div class="grid-30 ">
       <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
-    </div>
   </div>
 
-    <div class="section section-right">
-      <div class="section-header styled-header">
-        Our robots
-      </div>
-      <div class="section-content">
-        <showcase-list [robots]="robots" [categoryId]="categoryId"></showcase-list>
-      </div>
-    </div>
+  <!-- Banner -->
+  <div class="banner grid-70">
+    &ngsp;
+  </div>
 
+</div>
+
+
+<div>
+  <!-- Product listing and categories -->
+  <div class="container">
+
+
+      <div class="section section-right">
+        <div class="section-header custom-font">
+          Our robots
+        </div>
+        <div class="section-content">
+          <showcase-list [robots]="robots" [categoryId]="categoryId"></showcase-list>
+        </div>
+      </div>
+
+  </div>
 </div>

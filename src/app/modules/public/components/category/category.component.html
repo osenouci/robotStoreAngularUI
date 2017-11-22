@@ -1,7 +1,15 @@
-<div class="category-entry" *ngFor="let category of categories" [class.active]="isActive(category.id)" (click)="selectCategory(category.id)">
-    <a href="#" onclick="return false" >{{ category.name }} ({{category.total}})</a>
+<div class="category-section">
+  <div class="section-header custom-font">
+    Categories
 </div>
- 
-<div class="clear-filters-link" (click)="selectCategory(0)">
-    <a href="#" onclick="return false" >Clear</a>
+  <div class="section-content">
+
+    <div class="category-entry" *ngFor="let category of categories" [class.active]="isActive(category.id)" (click)="selectCategory(category.id)">
+      <a href="#" onclick="return false" class="custom-font">{{ category.name }} ({{category.total}})</a>
+    </div>
+
+    <div class="clear-filters-link" (click)="selectCategory(0)">
+        <a href="#" onclick="return false" >Clear</a>
+    </div>    
+  </div>
 </div>
