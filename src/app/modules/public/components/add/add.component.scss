@@ -34,3 +34,12 @@
         }
     }
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .loader-container,
+    .add-form {
+        width:90%;
+    }
+}
