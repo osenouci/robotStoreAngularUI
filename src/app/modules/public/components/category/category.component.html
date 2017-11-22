@@ -1,28 +1,28 @@
-<div class="category-section hide-on-mobile">
-  <div class="section-header custom-font">
-    Categories
-</div>
-  <div class="section-content">
-
-    <div class="category-entry" *ngFor="let category of categories" [class.active]="isActive(category.id)" (click)="selectCategory(category.id)">
-      <a href="#" onclick="return false" class="custom-font">{{ category.name }} ({{category.total}})</a>
+<!-- Desktop and tablet view -->
+<div *ngIf="!isMobile">
+  <div class="category-section">
+    <div class="section-header custom-font">
+      Categories
     </div>
+    <div class="section-content">
 
-    <div class="clear-filters-link" (click)="selectCategory(0)">
-        <a href="#" onclick="return false" >Clear</a>
-    </div>    
+      <div class="category-entry" *ngFor="let category of categories" [class.active]="isActive(category.id)" (click)="selectCategory(category.id)">
+        <a href="#" onclick="return false" class="custom-font">{{ category.name }} ({{category.total}})</a>
+      </div>
+
+      <div class="clear-filters-link" (click)="selectCategory(0)">
+        <a href="#" onclick="return false">Clear</a>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-<div class="grid-mobile-100 show-on-mobile hide-on-desktop hide-on-tablet">
-  <div class="width-100">
-    <mat-form-field class="width-100">
-      <mat-select [ngModel]="category" (ngModelChange)="selectCategory($event)" placeholder="{{ getPlaceHolder() }}">
-        <mat-option selected>Show all robots</mat-option>        
-        <mat-option *ngFor="let cat of categories" [value]="cat">{{ cat.name }}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+<!-- Alternative view for the mobile-->
+<div class="width-100" *ngIf="isMobile">
+  <mat-form-field class="width-100">
+    <mat-select [ngModel]="category" (ngModelChange)="selectCategory($event)" placeholder="{{ getPlaceHolder() }}">
+      <mat-option selected>Show all robots</mat-option>
+      <mat-option *ngFor="let cat of categories" [value]="cat">{{ cat.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>

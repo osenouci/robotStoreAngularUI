@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Output, EventEmitter, Input } from '@angular/core';
 import { RequestService } from './../../../../services/request.service';
 
 import { Category } from './../../classes/category';
@@ -15,6 +15,8 @@ export class CategoryComponent implements OnInit {
   public category:Category = null;
   private selectedCategory:number;
   
+  @Input() isMobile:Boolean = false;
+
   @Output() categoryIdEmittor: EventEmitter<number> = new EventEmitter();
 
   constructor(protected requestService: RequestService) { }
@@ -42,8 +44,6 @@ export class CategoryComponent implements OnInit {
   }
 
   public selectCategory(categoryId:number|Category) {
-
-    console.log(categoryId);
 
     if(categoryId instanceof Category) {
       this.category = categoryId;

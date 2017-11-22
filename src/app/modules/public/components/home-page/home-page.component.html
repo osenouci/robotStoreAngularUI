@@ -6,7 +6,7 @@
 
   <!-- Categories -->
   <div class="grid-25 tablet-grid-30">
-      <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
+      <app-category (categoryIdEmittor)="onCategoryUpdate($event)" [isMobile]="false"></app-category>
   </div>
 
   <!-- Banner -->
@@ -15,8 +15,8 @@
   </div>
 </div>
 
-<div class="grid-parent grid-container default-margin-top">
-  <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
+<div class="grid-parent grid-container default-margin-top hide-on-desktop hide-on-tablet">
+  <app-category (categoryIdEmittor)="onCategoryUpdate($event)" [isMobile]="true"></app-category>
 </div>
 <div class="default-margin-top">
   <!-- Product listing and categories -->
