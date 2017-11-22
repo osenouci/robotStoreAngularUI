@@ -1,21 +1,20 @@
-<div [class.hidden]="!isLoggedin()" class="delete-section">
+<div [class.hidden]="!isLoggedin()" class="delete-section default-margin-top">
     <button mat-raised-button color="warn" (click)="delete()">Delete robot</button>
 </div>
 
-<app-gallery [photos]="galleryImages">
-</app-gallery>
+<div class="default-margin-top">
+  <app-gallery [photos]="galleryImages"></app-gallery>
+</div>
 
-<div class="product-info">
+<div class="product-info default-margin-top">
   <h1 class="custom-font">{{ name }}</h1>
   <div class="price">Price:
-    <span>EUR {{ price }}</span>
+    <span>{{ price }} &euro;</span>
   </div>
   <div class="description">
     <h2 class="custom-font">Robot information</h2>
     <span>
-
       {{ description }}
-
     </span>
   </div>
 </div>

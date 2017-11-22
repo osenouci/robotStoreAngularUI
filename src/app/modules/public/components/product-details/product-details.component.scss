@@ -1,8 +1,11 @@
 .product-info {
-	margin-top:10em;
 	display:block;
 }
 .delete-section {
 	padding: 1em;
 	text-align: right;
+}
+.description {
+	font-size: 1.2em;
+	padding-bottom: 5em; /** The page looks a bit stange without space at the bottom **/
 }
