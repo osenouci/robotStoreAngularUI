@@ -2,31 +2,23 @@
   <button mat-raised-button color="accent" (click)="navigateToAddRobotForm()">Add new robot</button>
 </div>
 
-<div class="grid-parent grid-container default-margin-top">
+<div class="grid-parent grid-container default-margin-top hide-on-mobile">
 
   <!-- Categories -->
-  <div class="grid-30 ">
+  <div class="grid-25 tablet-grid-30">
       <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
   </div>
 
   <!-- Banner -->
-  <div class="banner grid-70">
+  <div class="banner grid-75 tablet-grid-70">
     &ngsp;
   </div>
 </div>
 
-
-<div>
+<div class="grid-parent grid-container default-margin-top">
+  <app-category (categoryIdEmittor)="onCategoryUpdate($event)"></app-category>
+</div>
+<div class="default-margin-top">
   <!-- Product listing and categories -->
-  <div class="container">
-      <div class="section">
-        <div class="section-header custom-font">
-          Our robots
-        </div>
-        <div class="section-content">
-          <showcase-list [robots]="robots" [categoryId]="categoryId"></showcase-list>
-        </div>
-      </div>
-
-  </div>
+  <showcase-list [robots]="robots" [categoryId]="categoryId"></showcase-list>
 </div>

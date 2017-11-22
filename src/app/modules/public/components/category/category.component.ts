@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Output, EventEmitter } from '@ang
 import { RequestService } from './../../../../services/request.service';
 
 import { Category } from './../../classes/category';
-
+import { MatSelectChange } from '@angular/material';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -12,6 +12,7 @@ import { Category } from './../../classes/category';
 export class CategoryComponent implements OnInit {
 
   public categories: Array<Category> = new Array();
+  public category:Category = null;
   private selectedCategory:number;
   
   @Output() categoryIdEmittor: EventEmitter<number> = new EventEmitter();
@@ -40,12 +41,30 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  public selectCategory(categoryId:number) {
-    this.selectedCategory = categoryId;
-    this.categoryIdEmittor.emit(categoryId);
+  public selectCategory(categoryId:number|Category) {
+
+    console.log(categoryId);
+
+    if(categoryId instanceof Category) {
+      this.category = categoryId;
+      categoryId = (categoryId as Category).id;
+    }
+
+    if(!categoryId) {
+      categoryId = 0;
+      this.category = null;
+    }
+
+    this.selectedCategory = categoryId as number;
+    this.categoryIdEmittor.emit(categoryId as number);
   }
   public isActive(categoryId:number):boolean {
     return this.selectedCategory == categoryId;
+  }
+
+
+  public getPlaceHolder():string {
+    return this.category? "Categories" : "Show all robots";
   }
   
 }

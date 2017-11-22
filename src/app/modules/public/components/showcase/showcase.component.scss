@@ -1,42 +1,51 @@
-$max-height:5.6em;
+@import './../../../../../assets/css/colors';
+
+$max-info-section-height:10em;
 
 .product-showcase {
+
     overflow: hidden;
     margin-bottom:1em;
 
+    /** Set a background color for the inner container div. **/
+    .inner-container {
+      background:$colorWhite;
+      padding:0.8em;
+    }
+    /** Center the product image and surround it with a light gray border **/
     .showcase-image {
+        border:solid 1px $colorLightGray;
+        text-align: center;
         width:100%;
         height:10em;
         overflow: hidden;
+        padding:0.4em;
+        box-sizing: border-box;
     }
     img {
-        max-width: 120%;
-        max-height: 120%;
+        max-width: 100%;
+        max-height: 100%;
     }    
 
-    .showcase-border {
-        border:solid 1px rgb(117, 109, 109)!important;
-        padding:0.6em;
-        overflow: hidden;
-    }
+    /** Style the info section **/
     .showcase-info {
 
-        height:$max-height;
-        max-height:$max-height;
+        height:$max-info-section-height;
+        max-height:$max-info-section-height;
 
         span {
             display:block;
+            padding:0.6em 0em;
         }
-
         span.title {
             color:rgb(5, 73, 150);
-            font-size: 0.9em;
+            font-size: 1.0em;
         }
         span.description {
             color:rgb(41, 42, 44);
-            font-size: 0.8em;
+            font-size: 0.9em;
             white-space: initial;
-            height:3.65em;
+            height:4.2em;
         }
         span.price {
             color:rgb(207, 51, 51);
