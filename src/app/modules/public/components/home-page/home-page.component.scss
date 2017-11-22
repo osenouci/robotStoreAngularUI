@@ -12,17 +12,12 @@ app-category,
 }
 
 .banner {
-    background:$templateColor; 
-}
-
-
-.section-right {
-    width:100%;
-    margin-left:1em;
-
-    .section-header {
-        border-color: $templateColor;
-    }    
+    
+    background:url('./../../../../../assets/background/robots-159598.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:$templateColor; 
+    background-size: contain;
 }
 
 .add-section {
