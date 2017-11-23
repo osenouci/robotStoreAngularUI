@@ -34,7 +34,8 @@ The project is divided into two layers, **`frontend`** and **`backend`**. There 
 - The UI in powered by Angular's Material design library.
 - The CSS grid used for responsive design is powered by [Unsemantic CSS Framwork](https://unsemantic.com).
 
-
+# Authentication
+The project uses interceptors for add authentication data to the requests.
 
 
 
