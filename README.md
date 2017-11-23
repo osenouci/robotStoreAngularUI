@@ -1,4 +1,4 @@
-his project was meant as exercice for integrating Angular 4 with spring boot.
+This project was meant as exercice for integrating Angular 4 with spring boot.
 
 This exercice is divided into two parts: 
 1. The **frontend** which is written in Java using the [SpringBoot](https://projects.spring.io/spring-boot/) framwork.
