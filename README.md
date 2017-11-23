@@ -1,3 +1,5 @@
+# About the project
+
 This project was meant as exercice for integrating Angular 4 with spring boot.
 
 This exercice is divided into two parts: 
