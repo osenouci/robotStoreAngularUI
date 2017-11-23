@@ -29,7 +29,10 @@ The project is divided into two layers, **`frontend`** and **`backend`**. There 
 
 > Please visit the other repos for information about their code. 
 
-
+# Project design
+- The project is powered by Angular 4.
+- The UI in powered by Angular's Material design library.
+- The CSS grid used for responsive design is powered by [Unsemantic CSS Framwork](https://unsemantic.com).
 
 
 
