@@ -35,7 +35,7 @@ The project is divided into two layers, **`frontend`** and **`backend`**. There 
 - The CSS grid used for responsive design is powered by [Unsemantic CSS Framwork](https://unsemantic.com).
 
 # Authentication
-The project uses interceptors for add authentication data to the requests.
+The project uses interceptors to add authentication headers to the different requests.
 
 
 
